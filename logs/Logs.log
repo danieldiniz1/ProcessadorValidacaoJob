@@ -1,0 +1,195 @@
+[2023-03-03 17:23:58,484] [org.springframework.boot.StartupInfoLogger] [main] [51] [INFO ] Starting ProcessadorValidacaoJobApplication using Java 17.0.5 with PID 9572 (C:\training\batch\processadorValidacaoJob\processadorValidacaoJob\target\classes started by dalexadi in C:\training\batch\processadorValidacaoJob\processadorValidacaoJob)
+[2023-03-03 17:23:58,486] [org.springframework.boot.SpringApplication] [main] [638] [INFO ] The following 1 profile is active: "dev"
+[2023-03-03 17:23:59,058] [org.springframework.data.repository.config.RepositoryConfigurationDelegate] [main] [138] [INFO ] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2023-03-03 17:23:59,076] [org.springframework.data.repository.config.RepositoryConfigurationDelegate] [main] [208] [INFO ] Finished Spring Data repository scanning in 9 ms. Found 0 JPA repository interfaces.
+[2023-03-03 17:23:59,345] [com.zaxxer.hikari.HikariDataSource] [main] [110] [INFO ] HikariPool-1 - Starting...
+[2023-03-03 17:23:59,719] [com.zaxxer.hikari.pool.HikariPool] [main] [565] [INFO ] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5e1fc42f
+[2023-03-03 17:23:59,721] [com.zaxxer.hikari.HikariDataSource] [main] [123] [INFO ] HikariPool-1 - Start completed.
+[2023-03-03 17:24:00,050] [org.hibernate.jpa.internal.util.LogHelper] [main] [31] [INFO ] HHH000204: Processing PersistenceUnitInfo [name: default]
+[2023-03-03 17:24:00,140] [org.hibernate.Version] [main] [44] [INFO ] HHH000412: Hibernate ORM core version 6.1.7.Final
+[2023-03-03 17:24:00,492] [org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl] [main] [66] [INFO ] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[2023-03-03 17:24:00,747] [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator] [main] [51] [INFO ] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-03-03 17:24:00,757] [org.springframework.orm.jpa.AbstractEntityManagerFactoryBean] [main] [437] [INFO ] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2023-03-03 17:24:00,972] [org.springframework.boot.StartupInfoLogger] [main] [57] [INFO ] Started ProcessadorValidacaoJobApplication in 2.866 seconds (process running for 3.623)
+[2023-03-03 17:24:00,974] [org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner] [main] [160] [INFO ] Running default command line with: []
+[2023-03-03 17:24:01,104] [org.springframework.batch.core.launch.support.SimpleJobLauncher$1] [main] [154] [INFO ] Job: [SimpleJob: [name=ProcessadorValidacaoJob]] launched with the following parameters: [{'run.id':'{value=1, type=class java.lang.Long, identifying=true}'}]
+[2023-03-03 17:24:01,134] [org.springframework.batch.core.job.SimpleStepHandler] [main] [150] [INFO ] Executing step: [processadorValidacaoStep]
+[2023-03-03 17:24:01,167] [org.springframework.batch.core.step.AbstractStep] [main] [257] [ERROR] Encountered an error executing step processadorValidacaoStep in job ProcessadorValidacaoJob
+org.springframework.batch.item.ItemStreamException: Failed to initialize the reader
+	at org.springframework.batch.item.support.AbstractItemCountingItemStreamItemReader.open(AbstractItemCountingItemStreamItemReader.java:152)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.doProceed(DelegatingIntroductionInterceptor.java:137)
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.invoke(DelegatingIntroductionInterceptor.java:124)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:702)
+	at org.springframework.batch.item.file.FlatFileItemReader$$SpringCGLIB$$0.open(<generated>)
+	at org.springframework.batch.item.support.CompositeItemStream.open(CompositeItemStream.java:124)
+	at org.springframework.batch.core.step.tasklet.TaskletStep.open(TaskletStep.java:293)
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:224)
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:153)
+	at org.springframework.batch.core.job.AbstractJob.handleStep(AbstractJob.java:417)
+	at org.springframework.batch.core.job.SimpleJob.doExecute(SimpleJob.java:132)
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:316)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:157)
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:50)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:148)
+	at org.springframework.batch.core.launch.support.TaskExecutorJobLauncher.run(TaskExecutorJobLauncher.java:70)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.execute(JobLauncherApplicationRunner.java:199)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.executeLocalJobs(JobLauncherApplicationRunner.java:178)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.launchJobFromProperties(JobLauncherApplicationRunner.java:166)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:161)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:156)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:760)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:317)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1304)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1293)
+	at br.com.training.processadorValidacaoJob.ProcessadorValidacaoJobApplication.main(ProcessadorValidacaoJobApplication.java:10)
+Caused by: java.lang.IllegalArgumentException: Input resource must be set
+	at org.springframework.util.Assert.notNull(Assert.java:204)
+	at org.springframework.batch.item.file.FlatFileItemReader.doOpen(FlatFileItemReader.java:256)
+	at org.springframework.batch.item.support.AbstractItemCountingItemStreamItemReader.open(AbstractItemCountingItemStreamItemReader.java:149)
+	... 36 common frames omitted
+[2023-03-03 17:24:01,175] [org.springframework.batch.core.step.AbstractStep] [main] [293] [INFO ] Step: [processadorValidacaoStep] executed in 39ms
+[2023-03-03 17:24:01,193] [org.springframework.batch.core.launch.support.SimpleJobLauncher$1] [main] [161] [INFO ] Job: [SimpleJob: [name=ProcessadorValidacaoJob]] completed with the following parameters: [{'run.id':'{value=1, type=class java.lang.Long, identifying=true}'}] and the following status: [FAILED] in 75ms
+[2023-03-03 17:24:01,200] [org.springframework.orm.jpa.AbstractEntityManagerFactoryBean] [SpringApplicationShutdownHook] [650] [INFO ] Closing JPA EntityManagerFactory for persistence unit 'default'
+[2023-03-03 17:24:01,202] [com.zaxxer.hikari.HikariDataSource] [SpringApplicationShutdownHook] [350] [INFO ] HikariPool-1 - Shutdown initiated...
+[2023-03-03 17:24:01,211] [com.zaxxer.hikari.HikariDataSource] [SpringApplicationShutdownHook] [352] [INFO ] HikariPool-1 - Shutdown completed.
+[2023-03-03 17:26:01,504] [org.springframework.boot.StartupInfoLogger] [main] [51] [INFO ] Starting ProcessadorValidacaoJobApplication using Java 17.0.5 with PID 6292 (C:\training\batch\processadorValidacaoJob\processadorValidacaoJob\target\classes started by dalexadi in C:\training\batch\processadorValidacaoJob\processadorValidacaoJob)
+[2023-03-03 17:26:01,506] [org.springframework.boot.SpringApplication] [main] [638] [INFO ] The following 1 profile is active: "dev"
+[2023-03-03 17:26:02,137] [org.springframework.data.repository.config.RepositoryConfigurationDelegate] [main] [138] [INFO ] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2023-03-03 17:26:02,154] [org.springframework.data.repository.config.RepositoryConfigurationDelegate] [main] [208] [INFO ] Finished Spring Data repository scanning in 8 ms. Found 0 JPA repository interfaces.
+[2023-03-03 17:26:02,395] [com.zaxxer.hikari.HikariDataSource] [main] [110] [INFO ] HikariPool-1 - Starting...
+[2023-03-03 17:26:02,789] [com.zaxxer.hikari.pool.HikariPool] [main] [565] [INFO ] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5e1fc42f
+[2023-03-03 17:26:02,791] [com.zaxxer.hikari.HikariDataSource] [main] [123] [INFO ] HikariPool-1 - Start completed.
+[2023-03-03 17:26:02,920] [org.hibernate.jpa.internal.util.LogHelper] [main] [31] [INFO ] HHH000204: Processing PersistenceUnitInfo [name: default]
+[2023-03-03 17:26:02,971] [org.hibernate.Version] [main] [44] [INFO ] HHH000412: Hibernate ORM core version 6.1.7.Final
+[2023-03-03 17:26:03,262] [org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl] [main] [66] [INFO ] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[2023-03-03 17:26:03,465] [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator] [main] [51] [INFO ] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-03-03 17:26:03,476] [org.springframework.orm.jpa.AbstractEntityManagerFactoryBean] [main] [437] [INFO ] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2023-03-03 17:26:03,816] [org.springframework.boot.StartupInfoLogger] [main] [57] [INFO ] Started ProcessadorValidacaoJobApplication in 2.684 seconds (process running for 3.281)
+[2023-03-03 17:26:03,819] [org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner] [main] [160] [INFO ] Running default command line with: [arquivosClientes=/files/clientes.txt]
+[2023-03-03 17:26:03,988] [org.springframework.batch.core.launch.support.SimpleJobLauncher$1] [main] [154] [INFO ] Job: [SimpleJob: [name=ProcessadorValidacaoJob]] launched with the following parameters: [{'arquivosClientes':'{value=/files/clientes.txt, type=class java.lang.String, identifying=true}','run.id':'{value=2, type=class java.lang.Long, identifying=true}'}]
+[2023-03-03 17:26:04,024] [org.springframework.batch.core.job.SimpleStepHandler] [main] [150] [INFO ] Executing step: [processadorValidacaoStep]
+[2023-03-03 17:26:04,072] [org.springframework.batch.core.step.AbstractStep] [main] [257] [ERROR] Encountered an error executing step processadorValidacaoStep in job ProcessadorValidacaoJob
+org.springframework.batch.item.ItemStreamException: Failed to initialize the reader
+	at org.springframework.batch.item.support.AbstractItemCountingItemStreamItemReader.open(AbstractItemCountingItemStreamItemReader.java:152)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.doProceed(DelegatingIntroductionInterceptor.java:137)
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.invoke(DelegatingIntroductionInterceptor.java:124)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:702)
+	at org.springframework.batch.item.file.FlatFileItemReader$$SpringCGLIB$$0.open(<generated>)
+	at org.springframework.batch.item.support.CompositeItemStream.open(CompositeItemStream.java:124)
+	at org.springframework.batch.core.step.tasklet.TaskletStep.open(TaskletStep.java:293)
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:224)
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:153)
+	at org.springframework.batch.core.job.AbstractJob.handleStep(AbstractJob.java:417)
+	at org.springframework.batch.core.job.SimpleJob.doExecute(SimpleJob.java:132)
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:316)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:157)
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:50)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:148)
+	at org.springframework.batch.core.launch.support.TaskExecutorJobLauncher.run(TaskExecutorJobLauncher.java:70)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.execute(JobLauncherApplicationRunner.java:199)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.executeLocalJobs(JobLauncherApplicationRunner.java:178)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.launchJobFromProperties(JobLauncherApplicationRunner.java:166)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:161)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:156)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:760)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:317)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1304)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1293)
+	at br.com.training.processadorValidacaoJob.ProcessadorValidacaoJobApplication.main(ProcessadorValidacaoJobApplication.java:10)
+Caused by: java.lang.IllegalArgumentException: Input resource must be set
+	at org.springframework.util.Assert.notNull(Assert.java:204)
+	at org.springframework.batch.item.file.FlatFileItemReader.doOpen(FlatFileItemReader.java:256)
+	at org.springframework.batch.item.support.AbstractItemCountingItemStreamItemReader.open(AbstractItemCountingItemStreamItemReader.java:149)
+	... 36 common frames omitted
+[2023-03-03 17:26:04,081] [org.springframework.batch.core.step.AbstractStep] [main] [293] [INFO ] Step: [processadorValidacaoStep] executed in 55ms
+[2023-03-03 17:26:04,100] [org.springframework.batch.core.launch.support.SimpleJobLauncher$1] [main] [161] [INFO ] Job: [SimpleJob: [name=ProcessadorValidacaoJob]] completed with the following parameters: [{'arquivosClientes':'{value=/files/clientes.txt, type=class java.lang.String, identifying=true}','run.id':'{value=2, type=class java.lang.Long, identifying=true}'}] and the following status: [FAILED] in 95ms
+[2023-03-03 17:26:04,105] [org.springframework.orm.jpa.AbstractEntityManagerFactoryBean] [SpringApplicationShutdownHook] [650] [INFO ] Closing JPA EntityManagerFactory for persistence unit 'default'
+[2023-03-03 17:26:04,108] [com.zaxxer.hikari.HikariDataSource] [SpringApplicationShutdownHook] [350] [INFO ] HikariPool-1 - Shutdown initiated...
+[2023-03-03 17:26:04,115] [com.zaxxer.hikari.HikariDataSource] [SpringApplicationShutdownHook] [352] [INFO ] HikariPool-1 - Shutdown completed.
+[2023-03-03 17:27:31,592] [org.springframework.boot.StartupInfoLogger] [main] [51] [INFO ] Starting ProcessadorValidacaoJobApplication using Java 17.0.5 with PID 9332 (C:\training\batch\processadorValidacaoJob\processadorValidacaoJob\target\classes started by dalexadi in C:\training\batch\processadorValidacaoJob\processadorValidacaoJob)
+[2023-03-03 17:27:31,594] [org.springframework.boot.SpringApplication] [main] [638] [INFO ] The following 1 profile is active: "dev"
+[2023-03-03 17:27:32,133] [org.springframework.data.repository.config.RepositoryConfigurationDelegate] [main] [138] [INFO ] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2023-03-03 17:27:32,149] [org.springframework.data.repository.config.RepositoryConfigurationDelegate] [main] [208] [INFO ] Finished Spring Data repository scanning in 7 ms. Found 0 JPA repository interfaces.
+[2023-03-03 17:27:32,377] [com.zaxxer.hikari.HikariDataSource] [main] [110] [INFO ] HikariPool-1 - Starting...
+[2023-03-03 17:27:32,717] [com.zaxxer.hikari.pool.HikariPool] [main] [565] [INFO ] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@43fda8d9
+[2023-03-03 17:27:32,720] [com.zaxxer.hikari.HikariDataSource] [main] [123] [INFO ] HikariPool-1 - Start completed.
+[2023-03-03 17:27:32,873] [org.hibernate.jpa.internal.util.LogHelper] [main] [31] [INFO ] HHH000204: Processing PersistenceUnitInfo [name: default]
+[2023-03-03 17:27:32,943] [org.hibernate.Version] [main] [44] [INFO ] HHH000412: Hibernate ORM core version 6.1.7.Final
+[2023-03-03 17:27:33,303] [org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl] [main] [66] [INFO ] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[2023-03-03 17:27:33,525] [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator] [main] [51] [INFO ] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-03-03 17:27:33,535] [org.springframework.orm.jpa.AbstractEntityManagerFactoryBean] [main] [437] [INFO ] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2023-03-03 17:27:33,840] [org.springframework.boot.StartupInfoLogger] [main] [57] [INFO ] Started ProcessadorValidacaoJobApplication in 2.563 seconds (process running for 3.092)
+[2023-03-03 17:27:33,843] [org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner] [main] [160] [INFO ] Running default command line with: [arquivosClientes=files/clientes.txt]
+[2023-03-03 17:27:33,970] [org.springframework.batch.core.launch.support.SimpleJobLauncher$1] [main] [154] [INFO ] Job: [SimpleJob: [name=ProcessadorValidacaoJob]] launched with the following parameters: [{'arquivosClientes':'{value=files/clientes.txt, type=class java.lang.String, identifying=true}','run.id':'{value=3, type=class java.lang.Long, identifying=true}'}]
+[2023-03-03 17:27:33,996] [org.springframework.batch.core.job.SimpleStepHandler] [main] [150] [INFO ] Executing step: [processadorValidacaoStep]
+[2023-03-03 17:27:34,024] [org.springframework.batch.core.step.AbstractStep] [main] [257] [ERROR] Encountered an error executing step processadorValidacaoStep in job ProcessadorValidacaoJob
+org.springframework.batch.item.ItemStreamException: Failed to initialize the reader
+	at org.springframework.batch.item.support.AbstractItemCountingItemStreamItemReader.open(AbstractItemCountingItemStreamItemReader.java:152)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:196)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.doProceed(DelegatingIntroductionInterceptor.java:137)
+	at org.springframework.aop.support.DelegatingIntroductionInterceptor.invoke(DelegatingIntroductionInterceptor.java:124)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:702)
+	at org.springframework.batch.item.file.FlatFileItemReader$$SpringCGLIB$$0.open(<generated>)
+	at org.springframework.batch.item.support.CompositeItemStream.open(CompositeItemStream.java:124)
+	at org.springframework.batch.core.step.tasklet.TaskletStep.open(TaskletStep.java:293)
+	at org.springframework.batch.core.step.AbstractStep.execute(AbstractStep.java:224)
+	at org.springframework.batch.core.job.SimpleStepHandler.handleStep(SimpleStepHandler.java:153)
+	at org.springframework.batch.core.job.AbstractJob.handleStep(AbstractJob.java:417)
+	at org.springframework.batch.core.job.SimpleJob.doExecute(SimpleJob.java:132)
+	at org.springframework.batch.core.job.AbstractJob.execute(AbstractJob.java:316)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher$1.run(SimpleJobLauncher.java:157)
+	at org.springframework.core.task.SyncTaskExecutor.execute(SyncTaskExecutor.java:50)
+	at org.springframework.batch.core.launch.support.SimpleJobLauncher.run(SimpleJobLauncher.java:148)
+	at org.springframework.batch.core.launch.support.TaskExecutorJobLauncher.run(TaskExecutorJobLauncher.java:70)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.execute(JobLauncherApplicationRunner.java:199)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.executeLocalJobs(JobLauncherApplicationRunner.java:178)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.launchJobFromProperties(JobLauncherApplicationRunner.java:166)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:161)
+	at org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner.run(JobLauncherApplicationRunner.java:156)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:760)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:750)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:317)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1304)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1293)
+	at br.com.training.processadorValidacaoJob.ProcessadorValidacaoJobApplication.main(ProcessadorValidacaoJobApplication.java:10)
+Caused by: java.lang.IllegalArgumentException: Input resource must be set
+	at org.springframework.util.Assert.notNull(Assert.java:204)
+	at org.springframework.batch.item.file.FlatFileItemReader.doOpen(FlatFileItemReader.java:256)
+	at org.springframework.batch.item.support.AbstractItemCountingItemStreamItemReader.open(AbstractItemCountingItemStreamItemReader.java:149)
+	... 36 common frames omitted
+[2023-03-03 17:27:34,032] [org.springframework.batch.core.step.AbstractStep] [main] [293] [INFO ] Step: [processadorValidacaoStep] executed in 34ms
+[2023-03-03 17:27:34,047] [org.springframework.batch.core.launch.support.SimpleJobLauncher$1] [main] [161] [INFO ] Job: [SimpleJob: [name=ProcessadorValidacaoJob]] completed with the following parameters: [{'arquivosClientes':'{value=files/clientes.txt, type=class java.lang.String, identifying=true}','run.id':'{value=3, type=class java.lang.Long, identifying=true}'}] and the following status: [FAILED] in 64ms
+[2023-03-03 17:27:34,052] [org.springframework.orm.jpa.AbstractEntityManagerFactoryBean] [SpringApplicationShutdownHook] [650] [INFO ] Closing JPA EntityManagerFactory for persistence unit 'default'
+[2023-03-03 17:27:34,055] [com.zaxxer.hikari.HikariDataSource] [SpringApplicationShutdownHook] [350] [INFO ] HikariPool-1 - Shutdown initiated...
+[2023-03-03 17:27:34,064] [com.zaxxer.hikari.HikariDataSource] [SpringApplicationShutdownHook] [352] [INFO ] HikariPool-1 - Shutdown completed.
