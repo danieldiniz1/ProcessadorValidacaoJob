@@ -16,14 +16,14 @@ public class ProcessadorValidacaoStepConfig {
 
     @Bean
     public Step processadorValidacaoStep(ItemReader<Cliente> processadorValidacaoReader,
-                                         ItemProcessor<Cliente, Cliente> processadorValidacaoProcessor,
+                                         ItemProcessor processadorClassifierProcessor,
                                          ItemWriter<Cliente> processadorValidacaoWriter,
                                          JobRepository jobRepository,
                                          PlatformTransactionManager transactionManager){
         return new StepBuilder("processadorValidacaoStep",jobRepository)
                 .<Cliente,Cliente> chunk(1,transactionManager)
                 .reader(processadorValidacaoReader)
-                .processor(processadorValidacaoProcessor)
+                .processor(processadorClassifierProcessor)
                 .writer(processadorValidacaoWriter)
                 .build();
     }

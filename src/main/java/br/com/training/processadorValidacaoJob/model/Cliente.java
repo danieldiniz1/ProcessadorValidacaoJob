@@ -9,10 +9,12 @@ import org.hibernate.validator.constraints.Range;
 @Data
 public class Cliente {
 
+    private int indice;
     @NotNull
     @Size(min = 1,max = 100)
     @Pattern(regexp = "[a-zA-Z\\s]+",message = "Nome em formato invalido")
     private String nome;
+    private String sobrenome;
     @NotNull
     @Range(min = 18,max = 130)
     private Integer idade;
