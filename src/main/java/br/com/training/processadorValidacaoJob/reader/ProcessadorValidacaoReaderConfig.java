@@ -16,10 +16,10 @@ public class ProcessadorValidacaoReaderConfig {
     @StepScope
     @Bean
     public FlatFileItemReader<Cliente> ProcessadorValidacaoReader(
-            @Value("#{jobParameters['arquivoClientes']}")Resource arquivoClientes){
+            @Value("#{jobParameters['arquivoClientes']}")String arquivoClientes){
         return new FlatFileItemReaderBuilder<Cliente>()
                 .name("ProcessadorValidacaoReader")
-                .resource(arquivoClientes)
+                .resource(new PathResource(arquivoClientes))
                 .delimited()
                 .names("nome", "idade", "email")
                 .targetType(Cliente.class)
