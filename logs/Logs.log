@@ -376,3 +376,25 @@ Field error in object 'item' on field 'email': rejected value [interdum.Curabitu
 [2023-03-06 11:43:27,877] [org.springframework.orm.jpa.AbstractEntityManagerFactoryBean] [SpringApplicationShutdownHook] [650] [INFO ] Closing JPA EntityManagerFactory for persistence unit 'default'
 [2023-03-06 11:43:27,880] [com.zaxxer.hikari.HikariDataSource] [SpringApplicationShutdownHook] [350] [INFO ] HikariPool-1 - Shutdown initiated...
 [2023-03-06 11:43:27,885] [com.zaxxer.hikari.HikariDataSource] [SpringApplicationShutdownHook] [352] [INFO ] HikariPool-1 - Shutdown completed.
+[2023-03-06 15:01:31,004] [org.hibernate.validator.internal.util.Version] [background-preinit] [21] [INFO ] HV000001: Hibernate Validator 8.0.0.Final
+[2023-03-06 15:01:31,057] [org.springframework.boot.StartupInfoLogger] [main] [51] [INFO ] Starting ProcessadorValidacaoJobApplication using Java 17.0.5 with PID 13164 (C:\training\batch\processadorValidacaoJob\processadorValidacaoJob\target\classes started by dalexadi in C:\training\batch\processadorValidacaoJob\processadorValidacaoJob)
+[2023-03-06 15:01:31,059] [org.springframework.boot.SpringApplication] [main] [638] [INFO ] The following 1 profile is active: "dev"
+[2023-03-06 15:01:31,736] [org.springframework.data.repository.config.RepositoryConfigurationDelegate] [main] [138] [INFO ] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2023-03-06 15:01:31,755] [org.springframework.data.repository.config.RepositoryConfigurationDelegate] [main] [208] [INFO ] Finished Spring Data repository scanning in 11 ms. Found 0 JPA repository interfaces.
+[2023-03-06 15:01:32,012] [com.zaxxer.hikari.HikariDataSource] [main] [110] [INFO ] HikariPool-1 - Starting...
+[2023-03-06 15:01:32,363] [com.zaxxer.hikari.pool.HikariPool] [main] [565] [INFO ] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@35a0e495
+[2023-03-06 15:01:32,365] [com.zaxxer.hikari.HikariDataSource] [main] [123] [INFO ] HikariPool-1 - Start completed.
+[2023-03-06 15:01:32,492] [org.hibernate.jpa.internal.util.LogHelper] [main] [31] [INFO ] HHH000204: Processing PersistenceUnitInfo [name: default]
+[2023-03-06 15:01:32,562] [org.hibernate.Version] [main] [44] [INFO ] HHH000412: Hibernate ORM core version 6.1.7.Final
+[2023-03-06 15:01:32,859] [org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl] [main] [66] [INFO ] HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+[2023-03-06 15:01:33,090] [org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator] [main] [51] [INFO ] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+[2023-03-06 15:01:33,102] [org.springframework.orm.jpa.AbstractEntityManagerFactoryBean] [main] [437] [INFO ] Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2023-03-06 15:01:33,352] [org.springframework.boot.StartupInfoLogger] [main] [57] [INFO ] Started ProcessadorValidacaoJobApplication in 2.728 seconds (process running for 3.297)
+[2023-03-06 15:01:33,355] [org.springframework.boot.autoconfigure.batch.JobLauncherApplicationRunner] [main] [160] [INFO ] Running default command line with: [arquivoClientes=files/clientes.txt]
+[2023-03-06 15:01:33,502] [org.springframework.batch.core.launch.support.SimpleJobLauncher$1] [main] [154] [INFO ] Job: [SimpleJob: [name=ProcessadorValidacaoJob]] launched with the following parameters: [{'arquivosClientes':'{value=files/clientes.txt, type=class java.lang.String, identifying=true}','run.id':'{value=11, type=class java.lang.Long, identifying=true}','arquivoClientes':'{value=files/clientes.txt, type=class java.lang.String, identifying=true}'}]
+[2023-03-06 15:01:33,536] [org.springframework.batch.core.job.SimpleStepHandler] [main] [150] [INFO ] Executing step: [processadorValidacaoStep]
+[2023-03-06 15:01:33,766] [org.springframework.batch.core.step.AbstractStep] [main] [293] [INFO ] Step: [processadorValidacaoStep] executed in 229ms
+[2023-03-06 15:01:33,781] [org.springframework.batch.core.launch.support.SimpleJobLauncher$1] [main] [161] [INFO ] Job: [SimpleJob: [name=ProcessadorValidacaoJob]] completed with the following parameters: [{'arquivosClientes':'{value=files/clientes.txt, type=class java.lang.String, identifying=true}','run.id':'{value=11, type=class java.lang.Long, identifying=true}','arquivoClientes':'{value=files/clientes.txt, type=class java.lang.String, identifying=true}'}] and the following status: [COMPLETED] in 265ms
+[2023-03-06 15:01:33,787] [org.springframework.orm.jpa.AbstractEntityManagerFactoryBean] [SpringApplicationShutdownHook] [650] [INFO ] Closing JPA EntityManagerFactory for persistence unit 'default'
+[2023-03-06 15:01:33,790] [com.zaxxer.hikari.HikariDataSource] [SpringApplicationShutdownHook] [350] [INFO ] HikariPool-1 - Shutdown initiated...
+[2023-03-06 15:01:33,796] [com.zaxxer.hikari.HikariDataSource] [SpringApplicationShutdownHook] [352] [INFO ] HikariPool-1 - Shutdown completed.
